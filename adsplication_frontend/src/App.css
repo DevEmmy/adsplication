@@ -1,0 +1,20 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+  padding: 0 20px;
+}
+
+Form > input{
+  padding: 12px 20px;
+  width: 100%;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: 1px solid #6e67ff;
+}
+
+Form > input:focus{
+  outline: none;
+}
