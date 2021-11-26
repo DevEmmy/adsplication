@@ -55,6 +55,8 @@ SITE_ID = 1
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -67,6 +69,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'adsplication_api.urls'
+
 
 TEMPLATES = [
     {
@@ -88,7 +91,7 @@ WSGI_APPLICATION = 'adsplication_api.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
     "https://example.com",
-    "https://sub.example.com",
+    "http://localhost:3000",
     "http://localhost:8080",
     "http://127.0.0.1:9000",
 ]
@@ -102,6 +105,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
 }
 
 

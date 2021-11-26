@@ -8,7 +8,7 @@ class UserProfileSerialzer(serializers.ModelSerializer):
 
     class Meta:
         model = UserProfile
-        fields = '__all__'
+        exclude = ('user',)
 
 
 class WithdrawalSerializer(serializers.ModelSerializer):
